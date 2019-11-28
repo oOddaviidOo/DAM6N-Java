@@ -1,0 +1,37 @@
+package usandoswing;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class frame3 extends JFrame{
+    JPanel panel = new JPanel();
+    private JButton azul,rosa,amarillo,verde;
+    public frame3(){
+        setTitle("Ejemplo con varios botones");
+        setSize(800,600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);  
+        panel.setLayout(new BorderLayout());
+        azul = new JButton("Azul");
+        Dimension d = new Dimension();
+        d.height = 40;
+        d.width = 100;
+        azul.setPreferredSize(d);
+        verde = new JButton("Verde");
+     	d.height = 40;
+        d.width = 100;
+        verde.setPreferredSize(d);
+        amarillo = new JButton("Amarillo");
+        d.height = 40;
+        d.width = 100;
+       	amarillo.setPreferredSize(d);
+        rosa = new JButton("Rosa");
+        d.height = 40;
+        d.width = 100;
+        rosa.setPreferredSize(d); 
+        panel.add(azul,BorderLayout.SOUTH);
+        panel.add(verde,BorderLayout.NORTH);
+        panel.add(amarillo,BorderLayout.EAST);
+        panel.add(rosa,BorderLayout.WEST);
+        add(panel);
+       	panel.setBackground(Color.red);  
+    }	
+}
