@@ -18,7 +18,7 @@ public class CameosStanLee {
 "Eres tan lento que te ganaria una oruga. Calla y salta, no le temas.",//2
 "Esto es canela, verdad que si?",//1
 "Stan Stan Lee Lee",//1
-"Stan Loo"};//2
+"Stan Loo",};//0
         int entrada=0;
         entrada=t.nextInt();
 
@@ -39,32 +39,33 @@ public class CameosStanLee {
         for (int i = 0; i < st.length(); i++) {
             caracteres[i]=st.charAt(i);
         }
+        
         for (int i = 0; i < st.length(); i++) {
-            if (caracteres[i]=='s') {
+            if (caracteres[i]=='s'||caracteres[i]=='S') {
                 s=true;
                 c++;
             }
-            if (s&&caracteres[i]=='t') {
+            if (s&&caracteres[i]=='t'||caracteres[i]=='T') {
                 t=true;
                 c++;
             }
-            if (s&&t&&caracteres[i]=='a') {
+            if (s&&t&&caracteres[i]=='a'||caracteres[i]=='A') {
                 a=true;
                 c++;
             }
-            if (s&&t&&a&&caracteres[i]=='n') {
+            if (s&&t&&a&&caracteres[i]=='n'||caracteres[i]=='N') {
                 n=true;
                 c++;
             }
-            if (s&&t&&a&&n&&caracteres[i]=='l') {
+            if (s&&t&&a&&n&&caracteres[i]=='l'||caracteres[i]=='L') {
                 l=true;
                 c++;
             }
-            if (s&&t&&a&&n&&l&&caracteres[i]=='e') {
+            if (s&&t&&a&&n&&l&&caracteres[i]=='e'||caracteres[i]=='E') {
                 e1=true;
                 c++;
             }
-            if (s&&t&&a&&n&&l&&e1&&caracteres[i]=='e') {
+            if (s&&t&&a&&n&&l&&e1&&caracteres[i]=='e'||caracteres[i]=='E') {
                 e2=true;
                 c++;
             }
@@ -79,10 +80,11 @@ public class CameosStanLee {
                 e1=false;
                 e2=false;
             }
-            
+            if (contieneCameo) {n_cameos++;
+            contieneCameo=false;}
         }
     
-        if (contieneCameo) {n_cameos++;}
+        
     return n_cameos;
     }
     
