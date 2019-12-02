@@ -14,24 +14,19 @@ public class CameosStanLee {
     public static void main(String[] args) {
         
         Scanner t=new Scanner(System.in);
-        String[] casosDelEjemplo={"Que me diga donde estan, le exijo!",
-"Eres tan lento que te ganaria una oruga. Calla y salta, no le temas.",
-"Esto es canela, verdad que si?",
-"Stan Stan Lee Lee",
-"Stan Loo"};
+        String[] casosDelEjemplo={"Que me diga donde estan, le exijo!",//1
+"Eres tan lento que te ganaria una oruga. Calla y salta, no le temas.",//2
+"Esto es canela, verdad que si?",//1
+"Stan Stan Lee Lee",//1
+"Stan Loo"};//2
         int entrada=0;
         entrada=t.nextInt();
 
-
-
-        
-        
         for (int i = 0; i < entrada; i++) {
             int resultado=comprobarCameo(casosDelEjemplo[i]);
             System.out.println(resultado);
         }
-        
-        
+          
     }
     //comprobar si el string contiene las letras que forman stanlee
     //contar cuantas veces aparece
@@ -76,6 +71,13 @@ public class CameosStanLee {
             
             if (s&&t&&a&&n&&l&&e1&&e2) {
                 contieneCameo=true;
+                s=false;
+                t=false;
+                a=false;
+                n=false;
+                l=false;
+                e1=false;
+                e2=false;
             }
             
         }
