@@ -34,9 +34,7 @@ class Servidor2 {
                          
                 
             
-                do {                
-                
-
+                while (!adios) {                
                     //recojo flujo de datos del socket
                     InputStream auxi = skCliente.getInputStream();
 
@@ -45,23 +43,23 @@ class Servidor2 {
 
                     //Capturamos cadena del flujo con readUTF y muestro
                     System.out.println("Cliente dice: "+flujoi.readUTF());
-
+                    esc=t.nextLine();
                     //asocio flujo salida de datos al socket
                     OutputStream auxo = skCliente.getOutputStream();
                     //asocio flujo de datos flujo de tipo DataOutputStream 
                     DataOutputStream flujoo = new DataOutputStream(auxo);
                     //escribo
-                    esc=t.nextLine();
-                    System.out.println("        Yo digo: "+esc);
-                    flujoo.writeUTF(esc);
+                    
 
-                    if (esc.equals("Adios")) {
+                    flujoo.writeUTF(esc);
+                    
+                    if (esc.equalsIgnoreCase("Adios")) {
                         adios = true;
                     }
                 
 
             
-            } while (adios=false);
+            } 
             //cierro conexión
             skCliente.close();
 

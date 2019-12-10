@@ -12,17 +12,21 @@ public class CameosStanLee {
     public static void main(String[] args) {
 
         Scanner t = new Scanner(System.in);
-        String[] casosDelEjemplo = {
-            "Que me diga donde estan, le exijo!",//1
-            "Eres tan lento que te ganaria una oruga. Calla y salta, no le temas.",//2
-            "Esto es canela, verdad que si?",//1
-            "Stan Stan Lee Lee",//1
-            "Stan Loo",};//0
+        Scanner t2 = new Scanner(System.in);
+        
         int entrada = 0;
         entrada = t.nextInt();
+        
+        String[] casosDelEjemplo = new String[entrada];
 
-        for (int i = 0; i < entrada; i++) {
+        
+        for (int i = 0; i < casosDelEjemplo.length; i++) {
+            casosDelEjemplo[i]=t2.nextLine();
+        }
+
+        for (int i = 0; i < casosDelEjemplo.length; i++) {
             int resultado = comprobarCameo(casosDelEjemplo[i]);
+            
             System.out.println(resultado);
         }
 

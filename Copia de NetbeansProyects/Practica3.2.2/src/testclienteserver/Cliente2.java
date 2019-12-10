@@ -19,7 +19,7 @@ class Cliente2 {
     static final int PUERTO = 5000;
     boolean adios = false;
 //    String[] conver = {"Hola", "Como estas?", "Bien", "Adios"};
-        String esc="";
+    String esc = "";
     Scanner t = new Scanner(System.in);
 
     public Cliente2() {
@@ -27,32 +27,34 @@ class Cliente2 {
             //se crea el socket y se conecta
             Socket skCliente = new Socket(HOST, PUERTO);
             System.out.println("Conexion establecida");
-           
-                do {                
-                    //asocio flujo salida de datos al socket
-                    OutputStream auxo = skCliente.getOutputStream();
-                    //asocio flujo de datos flujo de tipo DataOutputStream 
-                    DataOutputStream flujoo = new DataOutputStream(auxo);
-                    //escribo
-                    esc=t.nextLine();
-                    System.out.println("        Yo digo: "+esc);
-                    flujoo.writeUTF(esc);
-                    //recojo flujo de datos del socket
-                    InputStream auxi = skCliente.getInputStream();
 
-                    //asocio flujo de datos flujo de tipo DataInputStream
-                    DataInputStream flujoi = new DataInputStream(auxi);
+            while (!adios) {
+                esc = t.nextLine();
+                //asocio flujo salida de datos al socket
+                OutputStream auxo = skCliente.getOutputStream();
+                //asocio flujo de datos flujo de tipo DataOutputStream 
+                DataOutputStream flujoo = new DataOutputStream(auxo);
+                //escribo
 
-                    //Capturamos cadena del flujo con readUTF y muestro
-                    System.out.println("Servidor dice: "+flujoi.readUTF());
-                    
 
-                    if (esc.equals("Adios")) {
-                        adios = true;
-                    }
+                flujoo.writeUTF(esc);
                 
-            } while (adios=false);
-            
+                //recojo flujo de datos del socket
+                InputStream auxi = skCliente.getInputStream();
+
+                //asocio flujo de datos flujo de tipo DataInputStream
+                DataInputStream flujoi = new DataInputStream(auxi);
+
+                //Capturamos cadena del flujo con readUTF y muestro
+                System.out.println("Servidor dice: " + flujoi.readUTF());
+
+                if (esc.equals("Adios")) {
+                    adios = true;
+                }
+                
+
+            }
+
             //Cierro el socket
             skCliente.close();
         } catch (Exception e) {

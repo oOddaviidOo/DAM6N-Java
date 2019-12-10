@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package layouts;
+package plantillafx;
 
 import java.io.File;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
@@ -18,7 +19,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
-public class Layouts extends Application {
+public class TiendaLibros extends Application {
     
     @Override
     public void start(Stage primaryStage) {
@@ -27,7 +28,7 @@ public class Layouts extends Application {
         //creamos un VBox
         VBox vbox = crearVBox();
         //creamos un flowpane
-        FlowPane flow = CrearFlowPane();
+//        FlowPane flow = CrearFlowPane();
         //Creamos un stackpane
         StackPane stack = CrearStackPane();
         //añadimos el stack pane al hbox
@@ -42,7 +43,7 @@ public class Layouts extends Application {
         //añadimos los paneles a las diferentes posiciones del borderpane
         border.setTop(hbox);
         border.setLeft(vbox);
-        border.setRight(flow);
+//        border.setRight(flow);
         border.setCenter(grid); //como no tiene elemntos no se visualiza
         
         Scene scene = new Scene(border, 700, 500);
