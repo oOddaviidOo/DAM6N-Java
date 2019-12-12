@@ -1,5 +1,5 @@
-package hibernate01;
-// Generated 3 dic. 2019 20:37:27 by Hibernate Tools 4.3.1
+package hibernate;
+// Generated 11-dic-2019 12:18:36 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,6 +16,7 @@ public class Profesores  implements java.io.Serializable {
      private String apellidos;
      private String email;
      private Date fechaAlta;
+     private Integer salario;
 
     public Profesores() {
     }
@@ -24,13 +25,14 @@ public class Profesores  implements java.io.Serializable {
     public Profesores(int nrp) {
         this.nrp = nrp;
     }
-    public Profesores(int nrp, Departamentos departamentos, String nombre, String apellidos, String email, Date fechaAlta) {
+    public Profesores(int nrp, Departamentos departamentos, String nombre, String apellidos, String email, Date fechaAlta, Integer salario) {
        this.nrp = nrp;
        this.departamentos = departamentos;
        this.nombre = nombre;
        this.apellidos = apellidos;
        this.email = email;
        this.fechaAlta = fechaAlta;
+       this.salario = salario;
     }
    
     public int getNrp() {
@@ -74,6 +76,13 @@ public class Profesores  implements java.io.Serializable {
     
     public void setFechaAlta(Date fechaAlta) {
         this.fechaAlta = fechaAlta;
+    }
+    public Integer getSalario() {
+        return this.salario;
+    }
+    
+    public void setSalario(Integer salario) {
+        this.salario = salario;
     }
 
 

@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package hibernate;
 
-package hibernate01;
-
-
-public class Hibernate01 {
-
-    public static void main(String[] args) {
-
-    }
-
+/**
+ *
+ * @author DAM 6J
+ */
+public class QueryParam {
+    
 }

@@ -1,9 +1,11 @@
+package CMD;
+
 
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
-class ClienteGUI {
+class ClienteCMD {
 
     //nombre  máquina y puerto
     public boolean adios = false;
@@ -12,7 +14,7 @@ class ClienteGUI {
         String esc = "";
     Scanner t = new Scanner(System.in);
 
-    public ClienteGUI() {
+    public ClienteCMD() {
         try {
             
             //se crea el socket
@@ -40,6 +42,6 @@ class ClienteGUI {
     }
 
     public static void main(String[] arg) {
-        ClienteGUI cliente1 = new ClienteGUI();
+        ClienteCMD cliente1 = new ClienteCMD();
     }
 }

@@ -1,16 +1,18 @@
+package CMD;
+
 
 import java.io.*;
 import java.net.*;
 //Servidor espera conexiones a las que atenderá con un segundo socket
 //Servidor saludará con frase "Hola cliente"
 
-class ServidorGUI {
+class ServidorCMD {
 
 //puerto espera conexiones
     static final int PUERTO = 5000;
     String s="";
 
-    public ServidorGUI() {
+    public ServidorCMD() {
 
         try {
             //crea socket y espera
@@ -49,7 +51,7 @@ class ServidorGUI {
 
     public static void main(String[] arg) {
 
-        new ServidorGUI();
+        new ServidorCMD();
 
     }
 
