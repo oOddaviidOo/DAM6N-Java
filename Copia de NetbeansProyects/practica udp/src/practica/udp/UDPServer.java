@@ -3,18 +3,20 @@
 //UDPServer.java: A simple UDP server program.
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 public class UDPServer {
 	public static void main(String args[]){
-		
+		Scanner t=new Scanner(System.in);
 		DatagramSocket aSocket = null; //creo objeto DatagramSocket
-		
-		if (args.length < 1) { //se debe introducir puerto como argumento
-		System.out.println("Uso: java UDPServer <Port Number>");
+		          System.out.println("Introduce el Puerto");
+                          int puerto=t.nextInt();
+		if (puerto<=0) { //se debe introducir puerto como argumento
+		System.out.println("Introduce un puerto correcto");
 		System.exit(1);
 		}
 
 		try {
-			int socket_no = Integer.valueOf(args[0]).intValue(); //gurdo num puerto
+			int socket_no = puerto; //gurdo num puerto
 			aSocket = new DatagramSocket(socket_no); //creo DatagramSocket 
 			byte[] buffer = new byte[1000]; //matriz de bytes
 		
