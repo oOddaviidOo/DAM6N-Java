@@ -18,7 +18,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
 import javafx.stage.Stage;
 
-public class Layouts extends Application {
+public class Carrito extends Application {
     
     @Override
     public void start(Stage primaryStage) {

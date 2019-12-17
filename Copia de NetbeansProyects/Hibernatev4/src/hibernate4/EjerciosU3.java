@@ -18,24 +18,31 @@ import org.hibernate.Query;
 public class EjerciosU3 {
 
     public static void main(String[] args) {
+        //Código mínimo
         SessionFactory sesionf = SessionFactoryUtil.getSessionFactory();        
         Session sesion = sesionf.openSession();
-        Query q = sesion.createQuery("from Profesores");
+        Query q = sesion.createQuery("from Departamentos");
+        //fin código mínimo
+/*----------------------------------------------------------------*/   
+//
+//        List<Departamentos> lista = q.list();
+//        for (Departamentos dep: lista) {
+//            System.out.print(dep.getDeptNo()+" ");
+//            System.out.print(dep.getDnombre()+" ");
+//            System.out.print(dep.getLoc()+" ");
+//            System.out.println("\n");
+//        }
 /*----------------------------------------------------------------*/       
-        List<Profesores> lista = q.list();
-        for (Profesores dep: lista) {
-            System.out.println(dep.getApellidos());
-        }
-/*----------------------------------------------------------------*/       
-/*
-        q.setFechSize(5);
+
+
+        q.setFetchSize(2);
         Iterator iter = q.iterate();
         Departamentos depi;
         while(iter.hasNext()){
             depi = (Departamentos) iter.next();
-            System.out.println(dep.getDeptNo()+" "+dep.getDnombre());
+            System.out.println(depi.getDeptNo()+" "+depi.getDnombre());
         }
-*/        
+   
         sesion.close();
     }
 }
