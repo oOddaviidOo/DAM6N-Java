@@ -3,24 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GradosCelsius;
 
-import Ejercicio1.*;
+package testclienteserver;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
  * @author David
  */
-public class Main {
+public class testfecha {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Ventana v=new Ventana();
-        v.setVisible(true);
-                
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	       LocalDateTime now = LocalDateTime.now();
+               String s="123A "+dtf.format(now);
+	System.out.println(s);
+        
     }
     
 }

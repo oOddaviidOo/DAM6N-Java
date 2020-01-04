@@ -1,6 +1,5 @@
 package CMD;
 
-
 import java.io.*;
 import java.net.*;
 //Servidor espera conexiones a las que atenderá con un segundo socket
@@ -10,7 +9,7 @@ class ServidorCMD {
 
 //puerto espera conexiones
     static final int PUERTO = 5000;
-    String s="";
+    String s = "";
 
     public ServidorCMD() {
 
@@ -23,23 +22,26 @@ class ServidorCMD {
             //skCliente atiene al cliente
             Socket skCliente = skServidor.accept(); // Crea objeto                                
             System.out.println("Conexion Establecida");
-
+            FileWriter fichero = null;
+            fichero = new FileWriter("fichero.txt");
+            
+            while (skCliente.isConnected()) {
 
                 //recojo flujo de datos del socket
                 InputStream auxi = skCliente.getInputStream();
 
                 //asocio flujo de datos flujo de tipo DataInputStream
                 DataInputStream flujoi = new DataInputStream(auxi);
-                s=flujoi.readUTF();
+                s = flujoi.readUTF();
                 //Capturamos cadena del flujo con readUTF y muestro
                 System.out.println("Cliente dice: " + s);
+                fichero.write(s);
                 
-
-            
+                
+            }
             //cierro conexión
+            fichero.close();
             skCliente.close();
-                
-            
 
         } catch (Exception e) {
 
